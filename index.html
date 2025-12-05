@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nadia Baloch — Full Stack Web Designer</title>
+  <meta name="description" content="Nadia Baloch — Full Stack Web Designer. Backend: Python / Django. Frontend: HTML, CSS, JS. Responsive & professional portfolio." />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --bg:#050505;--card:#0b0b0b;--muted:#9aa5a1;--accent:#00d084;--glass: rgba(255,255,255,0.03);
+      --maxw:1100px;--radius:18px;--ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:0;font-family:var(--ff);background:linear-gradient(180deg,#000 0%,#020202 100%);color:#e6f0ee;-webkit-font-smoothing:antialiased}
+    body{padding:32px 20px;display:flex;justify-content:center}
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .logo{width:46px;height:46px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#001}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    nav a{color:var(--muted);text-decoration:none;font-size:14px}
+    .cta{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 14px;border-radius:12px;color:var(--accent);font-weight:600;text-decoration:none}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+    .hero-left{padding:12px;text-align:left}
+    h1{font-size:64px;line-height:0.95;margin:0 0 10px;font-weight:800;letter-spacing:2px}
+    .subtitle{color:var(--muted);font-size:15px;margin-bottom:18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .badge{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+    .primary-btn{display:inline-block;background:var(--accent);color:#001;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;margin-right:12px}
+    .secondary-btn{display:inline-block;border:1px solid rgba(255,255,255,0.06);padding:10px 16px;border-radius:12px;text-decoration:none;color:var(--muted)}
+    .hero-right{display:flex;justify-content:center}
+
+    .profile-card{width:100%;max-width:320px;background:linear-gradient(180deg,#071011,#03110f);border-radius:16px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,0.6);position:relative;overflow:hidden}
+    .profile-card img{width:100%;height:auto;object-fit:cover;border-radius:10px}
+    .profile-card .tag{position:absolute;left:12px;top:12px;background:rgba(0,0,0,0.5);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--accent)}
+
+    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .stat{flex:1;min-width:140px;background:var(--card);padding:12px;border-radius:12px;text-align:center}
+    .stat strong{display:block;font-size:20px}
+    .stat small{color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 420px;gap:24px;margin-top:26px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:14px}
+
+    .about p{color:var(--muted);line-height:1.6}
+    .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .skill{background:rgba(0,0,0,0.35);padding:8px 10px;border-radius:10px;font-size:13px}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    .project{background:var(--card);padding:12px;border-radius:10px}
+    .project h4{margin:0 0 6px}
+    .project p{color:var(--muted);font-size:13px;margin:0}
+
+    footer{margin-top:28px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .contact-card{display:flex;gap:12px;align-items:center}
+    .contact-card a{color:var(--muted);text-decoration:none}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 300px}
+      h1{font-size:48px}
+      .grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      body{padding:18px}
+      .hero{grid-template-columns:1fr;text-align:center}
+      .hero-left{text-align:center}
+      .hero-right{order:-1;margin-bottom:20px}
+      h1{font-size:40px}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      nav{flex-wrap:wrap}
+      footer{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">NB</div>
+        <div>
+          <div style="font-weight:700">Nadia Baloch</div>
+          <div style="font-size:12px;color:#9aa5a1">Full Stack Web Designer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="https://www.linkedin.com/in/nadia-baloch-47360338b" target="_blank">Download CV</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="badges">
+          <div class="badge">Full Stack</div>
+          <div class="badge">Python / Django</div>
+          <div class="badge">HTML • CSS • JS</div>
+          <div class="badge">Responsive UI</div>
+        </div>
+
+        <h1>WEB<br/>DESIGNER</h1>
+
+        <div class="subtitle">
+          I build professional responsive websites & Django-based backend systems.
+        </div>
+
+        <a class="primary-btn" href="mailto:codebynb@gmail.com">Hire Me</a>
+        <a class="secondary-btn" href="https://github.com/codebynb" target="_blank">View GitHub</a>
+
+        <div class="stats">
+          <div class="stat"><strong>1</strong><small>Year Experience</small></div>
+          <div class="stat"><strong>10</strong><small>Projects Done</small></div>
+          <div class="stat"><strong>90%</strong><small>Satisfaction</small></div>
+        </div>
+
+        <div style="margin-top:14px;color:#9aa5a1;font-size:13px">Links:</div>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <a class="badge" href="https://www.fiverr.com/s/993emDY" target="_blank"><i class="fa-brands fa-fiverr"></i> Fiverr</a>
+          <a class="badge" href="https://x.com/NadiaBaloch619" target="_blank"><i class="fa-brands fa-x-twitter"></i> X</a>
+          <a class="badge" href="https://www.linkedin.com/in/nadia-baloch-47360338b" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a class="badge" href="https://github.com/codebynb" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="badge" href="https://www.facebook.com/profile.php?id=61584234730016" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+          <a class="badge" href="https://youtube.com/@codebynb" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="profile-card">
+          <div class="tag">Full Stack • Django</div>
+          <img src="portfoloio.jpeg" alt="Nadia Baloch — Web Designer" />
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="card about" id="about">
+        <h3>About Me</h3>
+        <p style="margin-top:10px">
+          I'm <strong>Nadia Baloch</strong>, a Full Stack Web Designer from Karachi, Pakistan.
+          I design frontend UI and develop backend systems using
+          <strong>Python & Django</strong>.
+        </p>
+
+        <div class="skills">
+          <div class="skill">Python</div>
+          <div class="skill">Django</div>
+          <div class="skill">REST API</div>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">GitHub</div>
+          <div class="skill">Responsive UI</div>
+        </div>
+
+        <p style="margin-top:12px;color:#9aa5a1;font-size:13px">
+          Email: <a href="mailto:codebynb@gmail.com">codebynb@gmail.com</a> • WhatsApp:
+          <a href="https://wa.me/923172918843">+92 317 2918843</a>
+        </p>
+      </div>
+
+      <aside class="card" id="projects">
+        <h3>Projects</h3>
+        <div class="projects">
+          <div class="project"><h4>Django eCommerce</h4><p>Full store system, payments, admin dashboard.</p></div>
+          <div class="project"><h4>Portfolio + Blog</h4><p>Fully responsive personal brand site.</p></div>
+          <div class="project"><h4>Admin Dashboard</h4><p>JS-powered charts, analytics, APIs.</p></div>
+          <div class="project"><h4>Landing Page</h4><p>Modern UI/UX with animations.</p></div>
+          <div class="project"><h4>Blog CMS</h4><p>Custom content management system built in Django.</p></div>
+          <div class="project"><h4>Portfolio Gallery</h4><p>Interactive gallery with lightbox features.</p></div>
+          <div class="project"><h4>Todo App</h4><p>JS-powered task manager with local storage.</p></div>
+          <div class="project"><h4>Chat App</h4><p>Real-time chat app using Django Channels & WebSockets.</p></div>
+          <div class="project"><h4>Landing Page 2</h4><p>Responsive marketing page with animations.</p></div>
+          <div class="project"><h4>Admin Analytics</h4><p>Data visualization dashboard using Chart.js.</p></div>
+        </div>
+
+        <div style="margin-top:14px">
+          <a class="primary-btn" href="https://github.com/codebynb" target="_blank">See GitHub</a>
+        </div>
+      </aside>
+    </div>
+
+    <footer id="contact">
+      <div class="contact-card">
+        <div style="font-weight:700">Contact</div>
+        <div style="color:#9aa5a1;font-size:13px;margin-left:8px">
+          Email: <a href="mailto:codebynb@gmail.com">codebynb@gmail.com</a> •
+          WhatsApp: <a href="https://wa.me/923172918843">+92 317 2918843</a>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <a class="secondary-btn" href="https://x.com/NadiaBaloch619" target="_blank">X</a>
+        <a class="secondary-btn" href="https://www.linkedin.com/in/nadia-baloch-47360338b" target="_blank">LinkedIn</a>
+        <a class="secondary-btn" href="https://www.fiverr.com/s/993emDY" target="_blank">Fiverr</a>
+      </div>
+    </footer>
+
+    <div style="text-align:center;color:#9aa5a1;margin-top:16px;font-size:12px">
+      © <span id="year"></span> Nadia Baloch — All rights reserved
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
